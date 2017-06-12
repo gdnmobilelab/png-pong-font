@@ -1,0 +1,27 @@
+{
+  "name": "png-pong-font",
+  "version": "1.0.0",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^1.6.5",
+    "opentype.js": "^0.7.1"
+  },
+  "bin": {
+    "create-pngpong-font": "lib/tool/create-font-cli"
+  },
+  "devDependencies": {
+    "@types/expect.js": "^0.3.29",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^7.0.18",
+    "@types/opentype.js": "^0.0.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^3.3.0",
+    "mocha-typescript": "^1.1.2",
+    "typescript": "^2.3.2"
+  },
+  "scripts": {
+    "test-watch": "mocha-typescript-watch -o test/mocha.opts"
+  }
+}
