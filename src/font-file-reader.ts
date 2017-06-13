@@ -1,5 +1,6 @@
 import { ArrayBufferWalker } from 'png-pong';
 import { FileChunk } from './file-chunks';
+import { version } from './version';
 
 // We don't load the file into memory, instead we just store the offsets,
 // which we can use to read later.
@@ -46,6 +47,10 @@ export class PngPongFontReader {
             this.yMin = this.walker.readUint32();
             this.yMax = this.walker.readUint32();
             this.spaceWidth = this.walker.readUint32();
+            let fontVersion = this.walker.readUint8();
+            if (fontVersion !== version) {
+                throw new Error(`Font was generated with version ${fontVersion}, but this library is version ${version}. Please regenerate fonts.`)
+            }
             this.walker.offset += 4; // skip CRC
 
         } else {

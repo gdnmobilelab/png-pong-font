@@ -2,6 +2,7 @@ import * as opentype from 'opentype.js';
 import { basic } from './character-sets';
 import * as Canvas from 'canvas';
 import { ArrayBufferWalker } from 'png-pong';
+import { version } from '../version';
 
 function getKerningPairs(font: opentype.Font, glyphs: opentype.Glyph[], fontSize: number) {
 
@@ -187,6 +188,7 @@ export function generateFontFile(sourceFont: string, size: number) {
         + 2                 // font size
         + 4                 // ymin
         + 4                 // ymax
+        + 1                 // version
         + 4                 // space size
 
     let offsetLength = (2 * sizes.offsets.length) // Store offsets as UInt16
@@ -211,6 +213,7 @@ export function generateFontFile(sourceFont: string, size: number) {
     walker.writeUint32(sizes.yMin);
     walker.writeUint32(sizes.yMax);
     walker.writeUint32(spaceSize);
+    walker.writeUint8(version);
     walker.writeCRC();
 
     walker.writeUint32(basic.length);

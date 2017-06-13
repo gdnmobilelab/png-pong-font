@@ -5,8 +5,11 @@
   "types": "lib/src/index.d.ts",
   "license": "MIT",
   "dependencies": {
+    "@types/colors": "^1.1.3",
     "canvas": "^1.6.5",
-    "opentype.js": "^0.7.1"
+    "colors": "^1.1.2",
+    "opentype.js": "^0.7.1",
+    "yargs": "^8.0.2"
   },
   "bin": {
     "create-pngpong-font": "lib/tool/create-font-cli"
