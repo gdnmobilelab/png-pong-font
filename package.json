@@ -12,7 +12,7 @@
     "yargs": "^8.0.2"
   },
   "bin": {
-    "create-pngpong-font": "lib/tool/create-font-cli"
+    "create-pngpong-font": "lib/src/tool/create-font-cli"
   },
   "devDependencies": {
     "@types/expect.js": "^0.3.29",
